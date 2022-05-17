@@ -12,7 +12,7 @@ export default function Home(props) {
         let response = await fetch(`${url}/trending`);
 
         let moviesData = await response.json();
-        console.log("Movies Data", moviesData);
+        // console.log("Movies Data", moviesData);
         setMovies(moviesData);
     }
 
