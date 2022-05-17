@@ -14,18 +14,18 @@ export default function Movie(props) {
     return (
         <>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={`${imageStartURL}${props.poster_path}`} />
+                <Card.Img variant="top" src={`${imageStartURL}${props.movieData.poster_path}`} />
                 <Card.Body>
-                    <Card.Title>{props.title}</Card.Title>
-                    <Card.Text> <span className='boldSpan'>Release: </span> {props.release_date}</Card.Text>
-                    <Card.Text>{props.overview}</Card.Text>
+                    <Card.Title>{props.movieData.title}</Card.Title>
+                    <Card.Text> <span className='boldSpan'>Release: </span> {props.movieData.release_date}</Card.Text>
+                    <Card.Text>{props.movieData.overview}</Card.Text>
                     <Button onClick={handleShow} variant="primary">Add To Favorites </Button>
                 </Card.Body>
             </Card>
             {show &&
                 <ModelMovie
-                    title={props.title}
-                    image={`${imageStartURL}${props.poster_path}`}
+                    movieData={props.movieData}
+                    imageStartURL={imageStartURL}
                     show={show}
                     handleClose={handleClose}
                 />

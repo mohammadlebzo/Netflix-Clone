@@ -8,13 +8,7 @@ export default function MoviesList(props) {
                 {props.moviesData.map(movie => {
                     return (
                         <>
-                            <Movie
-                                id={movie.id}
-                                title={movie.title}
-                                release_date={movie.release_date}
-                                poster_path={movie.poster_path}
-                                overview={movie.overview}
-                            />
+                            <Movie movieData={movie}/>
                         </>
                     )
                 })}
